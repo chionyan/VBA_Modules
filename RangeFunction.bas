@@ -49,13 +49,13 @@ Function RangeMaxRowNum(ByVal argRng As Range) As Long
     RangeMaxRowNum = RangeRBtmCell(argRng).Row
 End Function
 Function RowSelect(ByVal argRange As Range, ByVal rowObj, Optional ByVal headerColNum = 0) As Range
-    'ˆø”1F‘ÎÛ”ÍˆÍA'ˆø”2:ŒŸõƒpƒ^[ƒ“A'ˆø”3:ŒŸõ‘ÎÛ‚Ì—ñŽw’è
-    'yŒŸõƒpƒ^[ƒ“z
-    'E”¼Šp‰p”Žš‚Æ•¶ŽšŒ^i³‹K•\Œ»j‚Ì•¹—p‰Â”\Bi”¼Šp‰p”Žš‚ðŒŸõ‘ÎÛ‚Æ‚·‚éê‡‚Í³‹K•\Œ»‚Å"^1$"‚È‚Ç‚ÆŽw’èBj
-    'Eu››:  v‚Å››`  ‚Ìs‚ðŽw’èBu››,  v‚Å››‚Æ  ‚Ìs‚ðŽw’èi,‚Í•¡”Žg—p‰Â”\j
-    'yŒŸõ‘ÎÛ‚Ì—ñŽw’èz
-    'EÈ—ª‚Ìê‡‘ÎÛ”ÍˆÍ‚Ìˆê”Ô¶‚Ì—ñ‚ðŽw’èB
-    'E•¶ŽšŒ^‚ÅŽw’è‚·‚é‚Æ‘ÎÛ”ÍˆÍ“à‚Å‚Ì‘Š‘Î—ñ”‚É‚È‚è‚Ü‚·B
+    'å¼•æ•°1ï¼šå¯¾è±¡ç¯„å›²ã€'å¼•æ•°2:æ¤œç´¢ãƒ‘ã‚¿ãƒ¼ãƒ³ã€'å¼•æ•°3:æ¤œç´¢å¯¾è±¡ã®åˆ—æŒ‡å®š
+    'ã€æ¤œç´¢ãƒ‘ã‚¿ãƒ¼ãƒ³ã€‘
+    'ãƒ»åŠè§’è‹±æ•°å­—ã¨æ–‡å­—åž‹ï¼ˆæ­£è¦è¡¨ç¾ï¼‰ã®ä½µç”¨å¯èƒ½ã€‚ï¼ˆåŠè§’è‹±æ•°å­—ã‚’æ¤œç´¢å¯¾è±¡ã¨ã™ã‚‹å ´åˆã¯æ­£è¦è¡¨ç¾ã§"^1$"ãªã©ã¨æŒ‡å®šã€‚ï¼‰
+    'ãƒ»ã€Œâ—‹â—‹:â–¡â–¡ã€ã§â—‹â—‹ï½žâ–¡â–¡ã®è¡Œã‚’æŒ‡å®šã€‚ã€Œâ—‹â—‹,â–¡â–¡ã€ã§â—‹â—‹ã¨â–¡â–¡ã®è¡Œã‚’æŒ‡å®šï¼ˆ,ã¯è¤‡æ•°ä½¿ç”¨å¯èƒ½ï¼‰
+    'ã€æ¤œç´¢å¯¾è±¡ã®åˆ—æŒ‡å®šã€‘
+    'ãƒ»çœç•¥ã®å ´åˆå¯¾è±¡ç¯„å›²ã®ä¸€ç•ªå·¦ã®åˆ—ã‚’æŒ‡å®šã€‚
+    'ãƒ»æ–‡å­—åž‹ã§æŒ‡å®šã™ã‚‹ã¨å¯¾è±¡ç¯„å›²å†…ã§ã®ç›¸å¯¾åˆ—æ•°ã«ãªã‚Šã¾ã™ã€‚
     On Error GoTo errProc
     If headerColNum = 0 Then
         Set headerCol = Resize2(argRange, , 1)
@@ -91,9 +91,9 @@ errProc:
 End Function
 
 Function ColSelect(ByVal argRange As Range, ByVal colObj, Optional ByVal headerRowNum = 0) As Range
-    'ˆø”1F‘ÎÛ”ÍˆÍA'ˆø”2:ŒŸõƒpƒ^[ƒ“A'ˆø”3:ŒŸõ‘ÎÛ‚ÌsŽw’è
-    'Ú‚µ‚¢“à—e‚ÍRowSelect‚Æ“¯—lB
-    'ˆø”2‚ÍƒAƒ‹ƒtƒ@ƒxƒbƒg‚É‚æ‚é—ñ–¼‚ÌŽw’è‚à‰Â”\B(ex."J"‚È‚Ç)
+    'å¼•æ•°1ï¼šå¯¾è±¡ç¯„å›²ã€'å¼•æ•°2:æ¤œç´¢ãƒ‘ã‚¿ãƒ¼ãƒ³ã€'å¼•æ•°3:æ¤œç´¢å¯¾è±¡ã®è¡ŒæŒ‡å®š
+    'è©³ã—ã„å†…å®¹ã¯RowSelectã¨åŒæ§˜ã€‚
+    'å¼•æ•°2ã¯ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã«ã‚ˆã‚‹åˆ—åã®æŒ‡å®šã‚‚å¯èƒ½ã€‚(ex."J"ãªã©)
     On Error GoTo errProc
     Dim alpha As Object: Set alpha = CreateObject("VBScript.RegExp")
     alpha.Pattern = "^[A-Z]{1,2}$"
@@ -133,7 +133,7 @@ errProc:
     Set ColSelect = Nothing
 End Function
 
-'RowSelect‚ÆColSelect‚ð‘g‚Ý‡‚í‚¹‚½‚à‚ÌB
+'RowSelectã¨ColSelectã‚’çµ„ã¿åˆã‚ã›ãŸã‚‚ã®ã€‚
 Function RangeSelect(ByVal argRange As Range, ByVal rowObj, ByVal colObj, Optional ByVal headerColNum = 0, Optional ByVal headerRowNum = 0) As Range
     On Error GoTo errProc
     Set RangeSelect = Intersect2(RowSelect(argRange, rowObj, headerColNum), ColSelect(argRange, colObj, headerRowNum))
@@ -142,7 +142,7 @@ errProc:
     Set RangeSelect = Nothing
 End Function
 
-'ˆø”1‚Ì”ÍˆÍ‚ðŠg’£‚·‚é
+'å¼•æ•°1ã®ç¯„å›²ã‚’æ‹¡å¼µã™ã‚‹
 Function ExtendRange(ByVal argRng As Range, _
                     Optional ByVal Top As Long = 0, Optional ByVal Left As Long = 0, _
                     Optional ByVal Bottom As Long = 0, Optional ByVal Right As Long = 0) As Range
@@ -153,8 +153,8 @@ errProc:
     Set ExtendRange = argRng
 End Function
 
-'iˆø”1‚Â‚Ìê‡jˆø”1‚Ì”ÍˆÍ‚ðˆø”2‚ÌsƒTƒCƒY‚ÉƒŠƒTƒCƒY‚·‚éB
-'iˆø”2‚Â‚Ìê‡jˆø”1‚Ì”ÍˆÍ‚ðˆø”2‚©‚çˆø”3‚Ìs”‚ÉƒŠƒTƒCƒY‚·‚éB
+'ï¼ˆå¼•æ•°1ã¤ã®å ´åˆï¼‰å¼•æ•°1ã®ç¯„å›²ã‚’å¼•æ•°2ã®è¡Œã‚µã‚¤ã‚ºã«ãƒªã‚µã‚¤ã‚ºã™ã‚‹ã€‚
+'ï¼ˆå¼•æ•°2ã¤ã®å ´åˆï¼‰å¼•æ•°1ã®ç¯„å›²ã‚’å¼•æ•°2ã‹ã‚‰å¼•æ•°3ã®è¡Œæ•°ã«ãƒªã‚µã‚¤ã‚ºã™ã‚‹ã€‚
 Function RowResize(ByVal argRng As Range, ByVal argi1 As Integer, Optional ByVal argi2 As Integer) As Range
     On Error GoTo errProc
     If Not argRng Is Nothing Then
@@ -175,8 +175,8 @@ errProc:
     Set RowResize = Nothing
 End Function
 
-'iˆø”1‚Â‚Ìê‡jˆø”1‚Ì”ÍˆÍ‚ðˆø”2‚Ì—ñƒTƒCƒY‚ÉƒŠƒTƒCƒY‚·‚éB
-'iˆø”2‚Â‚Ìê‡jˆø”1‚Ì”ÍˆÍ‚ðˆø”2‚©‚çˆø”3‚Ì—ñ”‚ÉƒŠƒTƒCƒY‚·‚éB
+'ï¼ˆå¼•æ•°1ã¤ã®å ´åˆï¼‰å¼•æ•°1ã®ç¯„å›²ã‚’å¼•æ•°2ã®åˆ—ã‚µã‚¤ã‚ºã«ãƒªã‚µã‚¤ã‚ºã™ã‚‹ã€‚
+'ï¼ˆå¼•æ•°2ã¤ã®å ´åˆï¼‰å¼•æ•°1ã®ç¯„å›²ã‚’å¼•æ•°2ã‹ã‚‰å¼•æ•°3ã®åˆ—æ•°ã«ãƒªã‚µã‚¤ã‚ºã™ã‚‹ã€‚
 Function ColResize(ByVal argRng As Range, ByVal argi1 As Integer, Optional ByVal argi2 As Integer) As Range
     On Error GoTo errProc
     If Not argRng Is Nothing Then
@@ -197,7 +197,7 @@ errProc:
     Set ColResize = Nothing
 End Function
 
-'ˆø””ÍˆÍ‚Ìƒf[ƒ^‚Ì‚ ‚éã’[‚Ü‚Å”ÍˆÍ‚ðŠg’£‚µ‚½”ÍˆÍ‚ð•Ô‚·
+'å¼•æ•°ç¯„å›²ã®ãƒ‡ãƒ¼ã‚¿ã®ã‚ã‚‹ä¸Šç«¯ã¾ã§ç¯„å›²ã‚’æ‹¡å¼µã—ãŸç¯„å›²ã‚’è¿”ã™
 Function TopExtention(ByVal argRng As Range) As Range
     Dim minRowNum As Long
     For Each area In argRng.Areas
@@ -213,7 +213,7 @@ Function TopExtention(ByVal argRng As Range) As Range
     Next
 End Function
 
-'ˆø””ÍˆÍ‚Ìƒf[ƒ^‚Ì‚ ‚é‰º’[‚Ü‚Å”ÍˆÍ‚ðŠg’£‚µ‚½”ÍˆÍ‚ð•Ô‚·
+'å¼•æ•°ç¯„å›²ã®ãƒ‡ãƒ¼ã‚¿ã®ã‚ã‚‹ä¸‹ç«¯ã¾ã§ç¯„å›²ã‚’æ‹¡å¼µã—ãŸç¯„å›²ã‚’è¿”ã™
 Function BottomExtention(ByVal argRng As Range) As Range
     Dim maxRowNum As Long
     For Each area In argRng.Areas
@@ -229,7 +229,7 @@ Function BottomExtention(ByVal argRng As Range) As Range
     Next
 End Function
 
-'ˆø””ÍˆÍ‚Ìƒf[ƒ^‚Ì‚ ‚é¶’[‚Ü‚Å”ÍˆÍ‚ðŠg’£‚µ‚½”ÍˆÍ‚ð•Ô‚·
+'å¼•æ•°ç¯„å›²ã®ãƒ‡ãƒ¼ã‚¿ã®ã‚ã‚‹å·¦ç«¯ã¾ã§ç¯„å›²ã‚’æ‹¡å¼µã—ãŸç¯„å›²ã‚’è¿”ã™
 Function LeftExtention(ByVal argRng As Range) As Range
     Dim minColNum As Long
     For Each area In argRng.Areas
@@ -245,7 +245,7 @@ Function LeftExtention(ByVal argRng As Range) As Range
     Next
 End Function
 
-'ˆø””ÍˆÍ‚Ìƒf[ƒ^‚Ì‚ ‚é‰E’[‚Ü‚Å”ÍˆÍ‚ðŠg’£‚µ‚½”ÍˆÍ‚ð•Ô‚·
+'å¼•æ•°ç¯„å›²ã®ãƒ‡ãƒ¼ã‚¿ã®ã‚ã‚‹å³ç«¯ã¾ã§ç¯„å›²ã‚’æ‹¡å¼µã—ãŸç¯„å›²ã‚’è¿”ã™
 Function RightExtention(ByVal argRng As Range) As Range
     Dim maxColNum As Long
     For Each area In argRng.Areas
@@ -261,12 +261,12 @@ Function RightExtention(ByVal argRng As Range) As Range
     Next
 End Function
 
-'ˆø””ÍˆÍ‚Ìƒf[ƒ^‚Ì‚ ‚é‰E‰º’[‚Ü‚Å”ÍˆÍ‚ðŠg’£‚µ‚½”ÍˆÍ‚ð•Ô‚·
+'å¼•æ•°ç¯„å›²ã®ãƒ‡ãƒ¼ã‚¿ã®ã‚ã‚‹å³ä¸‹ç«¯ã¾ã§ç¯„å›²ã‚’æ‹¡å¼µã—ãŸç¯„å›²ã‚’è¿”ã™
 Function BottomRightExtention(ByVal argRng As Range) As Range
     Set BottomRightExtention = BottomExtention(RightExtention(argRng))
 End Function
 
-'ˆø”1‚Ì”ÍˆÍ“à‚Åˆø”2‚Ì³‹K•\Œ»‚Éˆê’v‚·‚é”ÍˆÍ‚Ì‚Ý‚ðƒtƒBƒ‹ƒ^ƒŠƒ“ƒO‚µ‚Ä”ÍˆÍ‚ð•Ô‚·ŠÖ”
+'å¼•æ•°1ã®ç¯„å›²å†…ã§å¼•æ•°2ã®æ­£è¦è¡¨ç¾ã«ä¸€è‡´ã™ã‚‹ç¯„å›²ã®ã¿ã‚’ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°ã—ã¦ç¯„å›²ã‚’è¿”ã™é–¢æ•°
 Function FilterRng(ByVal argRng As Range, ByVal args As String, Optional formulaFlag As Long = 0) As Range
     Set FilterRng = Nothing
     Dim re As Object: Set re = CreateObject("VBScript.RegExp")
@@ -282,7 +282,7 @@ Function FilterRng(ByVal argRng As Range, ByVal args As String, Optional formula
     Next
 End Function
 
-' ˆø”1‚Ì”ÍˆÍ“à‚ÅA•ÒW‰Â”\‚ÈƒZƒ‹‚ð•Ô‚·ŠÖ”
+' å¼•æ•°1ã®ç¯„å›²å†…ã§ã€ç·¨é›†å¯èƒ½ãªã‚»ãƒ«ã‚’è¿”ã™é–¢æ•°
 Function InpuListRng(ByVal argRng As Range) As Range
     Set InpuListRng = Nothing
     For Each rng In argRng
@@ -292,7 +292,7 @@ Function InpuListRng(ByVal argRng As Range) As Range
     Next rng
 End Function
 
-'•¡”—Ìˆæ‚É‘Î‰ž‚µ‚½Resize
+'è¤‡æ•°é ˜åŸŸã«å¯¾å¿œã—ãŸResize
 Function Resize2(ByVal argRng As Range, Optional ByVal rowSize As Long = 0, Optional ByVal colSize As Long = 0) As Range
     For Each area In argRng.Areas
         If rowSize = 0 Then Set Resize2 = Union2(Resize2, area.Resize(, colSize))
@@ -300,7 +300,7 @@ Function Resize2(ByVal argRng As Range, Optional ByVal rowSize As Long = 0, Opti
     Next
 End Function
 
-' •¡”‚ÌƒZƒ‹ ArgList ‚Ì˜aW‡‚ð•Ô‚·
+' è¤‡æ•°ã®ã‚»ãƒ« ArgList ã®å’Œé›†åˆã‚’è¿”ã™
 Function Union2(ParamArray argList() As Variant) As Range
     Dim buf As Range
     Dim i As Long
@@ -316,7 +316,7 @@ Function Union2(ParamArray argList() As Variant) As Range
     Set Union2 = buf
 End Function
 
-'•¡”‚ÌƒZƒ‹ ArgList ‚ÌÏW‡‚ð•Ô‚·
+'è¤‡æ•°ã®ã‚»ãƒ« ArgList ã®ç©é›†åˆã‚’è¿”ã™
 Function Intersect2(ParamArray argList() As Variant) As Range
     Dim buf As Range
     Dim i As Long
@@ -333,8 +333,8 @@ Function Intersect2(ParamArray argList() As Variant) As Range
     Set Intersect2 = buf
 End Function
 
-' SourceRange ‚©‚ç ArgList ‚ð·‚µˆø‚¢‚½·W‡‚ð•Ô‚·
-' (SourceRange ‚Æ ”½“]‚µ‚½ ArgList ‚Æ‚ÌÏW‡‚ð•Ô‚·)
+' SourceRange ã‹ã‚‰ ArgList ã‚’å·®ã—å¼•ã„ãŸå·®é›†åˆã‚’è¿”ã™
+' (SourceRange ã¨ åè»¢ã—ãŸ ArgList ã¨ã®ç©é›†åˆã‚’è¿”ã™)
 Function Except2 _
     (ByRef SourceRange As Variant, ParamArray argList() As Variant) As Range
     If TypeName(SourceRange) = "Range" Then
@@ -350,7 +350,7 @@ Function Except2 _
     End If
 End Function
 
-'SourceRange ‚Ì‘I‘ð”ÍˆÍ‚ð”½“]‚·‚é
+'SourceRange ã®é¸æŠžç¯„å›²ã‚’åè»¢ã™ã‚‹
 Function Invert2(ByRef SourceRange As Variant) As Range
     If Not TypeName(SourceRange) = "Range" Then Exit Function
     Dim sh As Worksheet
@@ -390,12 +390,12 @@ Function Invert2(ByRef SourceRange As Variant) As Range
     Set Invert2 = buf
 End Function
 
-'Žl‹÷‚ðŽw’è‚µ‚Ä Range ‚ð“¾‚é
+'å››éš…ã‚’æŒ‡å®šã—ã¦ Range ã‚’å¾—ã‚‹
 Function GetRangeWithPosition(ByRef sh As Worksheet, _
     ByVal Top As Long, ByVal Left As Long, _
     ByVal Bottom As Long, ByVal Right As Long) As Range
     
-    '–³ŒøðŒ
+    'ç„¡åŠ¹æ¡ä»¶
     If Top > Bottom Or Left > Right Then
         Exit Function
     ElseIf Top < 0 Or Left < 0 Then
