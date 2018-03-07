@@ -2,7 +2,7 @@ Attribute VB_Name = "M04_ArrayOperation_Function"
 'Option Explicit
 Dim tempArr()
 
-'2‚Â‚Ì”z—ñ‚Ì‹¤’Ê•”•ª‚Ì‚ÝŽæ‚èo‚·
+'2ã¤ã®é…åˆ—ã®å…±é€šéƒ¨åˆ†ã®ã¿å–ã‚Šå‡ºã™
 Function DuplicationArray(ByVal arr1, ByVal arr2) As Variant()
     For Each Item1 In arr1
         For Each Item2 In arr2
@@ -11,7 +11,7 @@ Function DuplicationArray(ByVal arr1, ByVal arr2) As Variant()
     Next
 End Function
 
-'“®“I‚É”z—ñ‚ÉV‚½‚È—v‘f‚ð‰Á‚¦‚é
+'å‹•çš„ã«é…åˆ—ã«æ–°ãŸãªè¦ç´ ã‚’åŠ ãˆã‚‹
 Function ArrayAdd(argArr() As Variant, ByVal data As Variant) As Variant()
     On Error GoTo Err
     ReDim Preserve argArr(UBound(argArr) + 1): GoTo endProc
@@ -22,14 +22,14 @@ endProc:
     ArrayAdd = argArr
 End Function
 
-'”z—ñ‚ÌÅŒã‚Ì—v‘f‚ðíœ‚·‚é
+'é…åˆ—ã®æœ€å¾Œã®è¦ç´ ã‚’å‰Šé™¤ã™ã‚‹
 Function ArrayCut(argArr() As Variant) As Variant()
     On Error Resume Next
     ReDim Preserve argArr(UBound(argArr) - 1)
     ArrayCut = argArr
 End Function
 
-'VariantŒ^‚Ì”z—ñ‚Ì’†g‚Ì•û‚ª‘S‚Äˆê’v‚·‚é‚Æ‚«A‚»‚ÌŒ^‚ð•Ô‚·
+'Variantåž‹ã®é…åˆ—ã®ä¸­èº«ã®æ–¹ãŒå…¨ã¦ä¸€è‡´ã™ã‚‹ã¨ãã€ãã®åž‹ã‚’è¿”ã™
 Function ArrayType(ByVal argArr As Variant) As String
     Dim typenmArr()
     For Each arr In argArr
@@ -42,7 +42,7 @@ Function ArrayType(ByVal argArr As Variant) As String
     End If
 End Function
 
-'”z—ñ“à‚Ìargs‚Ì—v‘f”‚ð•Ô‚·
+'é…åˆ—å†…ã®argsã®è¦ç´ æ•°ã‚’è¿”ã™
 Function ArrayCount(argArr, ByVal args As Variant) As Long
     On Error GoTo errProc
     ArrayCount = UBound(Filter(argArr, args)) + 1
@@ -51,7 +51,7 @@ errProc:
     ArrayCount = 0
 End Function
 
-Function RangeToArray(ByVal argRng As Range) As Variant()   '”ÍˆÍ‚ð“ñŽŸŒ³”z—ñ‚É•ÏŠ·
+Function RangeToArray(ByVal argRng As Range) As Variant()   'ç¯„å›²ã‚’äºŒæ¬¡å…ƒé…åˆ—ã«å¤‰æ›
     If Not argRng Is Nothing Then
         ReDim tempArr(argRng.Rows.Count, argRng.Columns.Count)
         For r = 1 To argRng.Rows.Count
@@ -63,7 +63,7 @@ Function RangeToArray(ByVal argRng As Range) As Variant()   '”ÍˆÍ‚ð“ñŽŸŒ³”z—ñ‚É•
     End If
 End Function
 
-Function RangeToOneDimention(ByVal argRng As Range) As String() '”ÍˆÍ“à‚Ì’l‚ðˆêŽŸŒ³”z—ñ‰»
+Function RangeToOneDimention(ByVal argRng As Range) As String() 'ç¯„å›²å†…ã®å€¤ã‚’ä¸€æ¬¡å…ƒé…åˆ—åŒ–
     If Not argRng Is Nothing Then
         For Each area In argRng.Areas
             For Each rng In area
@@ -75,7 +75,7 @@ Function RangeToOneDimention(ByVal argRng As Range) As String() '”ÍˆÍ“à‚Ì’l‚ðˆêŽ
     End If
 End Function
 
-'”z—ñ“à‚Ìd•¡íœ
+'é…åˆ—å†…ã®é‡è¤‡å‰Šé™¤
 Function ArrayDeduplication(argArr As Variant) As Variant()
     Dim tempArr() As Variant
     Dim col As New Collection
@@ -95,7 +95,7 @@ Function ArrayDeduplication(argArr As Variant) As Variant()
 
 End Function
 
-Function Matrix(argArr As Variant) As Variant()     's—ñ’uŠ·
+Function Matrix(argArr As Variant) As Variant()     'è¡Œåˆ—ç½®æ›
     If IsArrayEx(argArr) = 1 Then
         ReDim tempArr(UBound(argArr, 2), UBound(argArr, 1))
         For r = LBound(argArr, 1) To UBound(argArr, 1) - 1
@@ -107,7 +107,7 @@ Function Matrix(argArr As Variant) As Variant()     's—ñ’uŠ·
     End If
 End Function
 
-Function RowIntervalAdd(argArr As Variant, Optional interval As Long = 1) As Variant() 'intervals‚¸‚ÂŠÔŠu‚ ‚¯‚é
+Function RowIntervalAdd(argArr As Variant, Optional interval As Long = 1) As Variant() 'intervalè¡Œãšã¤é–“éš”ã‚ã‘ã‚‹
     If IsArrayEx(argArr) = 1 Then
         ReDim tempArr((UBound(argArr, 1) - 1) * (interval + 1) + 1, UBound(argArr, 2))
         For r = LBound(argArr, 1) To UBound(argArr, 1) - 1
@@ -119,7 +119,7 @@ Function RowIntervalAdd(argArr As Variant, Optional interval As Long = 1) As Var
     End If
 End Function
 
-Function ColIntervalAdd(argArr As Variant, Optional interval As Long = 1) As Variant() 'interval—ñ‚¸‚ÂŠÔŠu‚ ‚¯‚é
+Function ColIntervalAdd(argArr As Variant, Optional interval As Long = 1) As Variant() 'intervalåˆ—ãšã¤é–“éš”ã‚ã‘ã‚‹
     If IsArrayEx(argArr) = 1 Then
         ReDim tempArr(UBound(argArr, 1), (UBound(argArr, 2) - 1) * (interval + 1) + 1)
         For r = LBound(argArr, 1) To UBound(argArr, 1) - 1
@@ -131,7 +131,7 @@ Function ColIntervalAdd(argArr As Variant, Optional interval As Long = 1) As Var
     End If
 End Function
 
-Sub ArrayPaste(argArr As Variant, ByVal tgtCell As Range)  '”z—ñ‚Ì”ÍˆÍ“\‚è•t‚¯
+Sub ArrayPaste(argArr As Variant, ByVal tgtCell As Range)  'é…åˆ—ã®ç¯„å›²è²¼ã‚Šä»˜ã‘
     If IsArrayEx(argArr) = 1 Then
         For r = 0 To UBound(argArr, 1) - 1
             For c = 0 To UBound(argArr, 2) - 1
@@ -141,7 +141,7 @@ Sub ArrayPaste(argArr As Variant, ByVal tgtCell As Range)  '”z—ñ‚Ì”ÍˆÍ“\‚è•t‚¯
     End If
 End Sub
 
-'”z—ñ‚É”z—ñ’Ç‰Á(direction:1¨‰EA2¨‰ºA3¨¶A4¨ã)
+'é…åˆ—ã«é…åˆ—è¿½åŠ (direction:1â†’å³ã€2â†’ä¸‹ã€3â†’å·¦ã€4â†’ä¸Š)
 Function ArrayAddArray(argArr1() As Variant, argArr2() As Variant, Optional direction As Long = 1) As Variant()
     If direction >= 1 And direction <= 4 Then
         If direction = 1 Or direction = 3 Then ReDim tempArr(UBound(argArr1, 1), UBound(argArr1, 2) + UBound(argArr2, 2))
